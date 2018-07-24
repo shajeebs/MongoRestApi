@@ -19,7 +19,9 @@ const _      = require('lodash'),
 //Test
 require('./models/Test/test_customer')
 require('./models/Test/test_invoice')
-//require('./models/Test/test_todo')
+require('./models/Test/todo')
+require('./models/Test/todonew')
+
  
 require('./models/Administration/Company')
 require('./models/Administration/AuditLog')
