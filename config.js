@@ -7,6 +7,6 @@ module.exports = {
     port: process.env.PORT || 3033,
     base_url: process.env.BASE_URL || 'http://localhost:3033',
     db: {
-        uri: 'mongodb://shajeebs:21gcs0250@ds249311.mlab.com:49311/merndb',
+        uri: 'mongodb://merndbusr2:Password1!@ds249311.mlab.com:49311/merndb',
     },
 }
