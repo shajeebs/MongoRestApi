@@ -79,6 +79,6 @@ server.listen(config.port, function() {
  
     })
  
-    global.db = mongoose.connect(config.db.uri)
+    global.db = mongoose.connect(config.db.uri, { useMongoClient: true })
  
 })
