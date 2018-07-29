@@ -68,7 +68,7 @@ server.listen(config.port, function() {
         }
  
         log.info(
-            '%s v%s ready to accept connections on port %s in %s environment.',
+            '- %s(v%s) - ready to accept connections on port: %s in Environment: %s.',
             server.name,
             config.version,
             config.port,
@@ -78,7 +78,7 @@ server.listen(config.port, function() {
         require('./routes')
  
     })
- 
+    mongoose.Promise = global.Promise;
     global.db = mongoose.connect(config.db.uri, { useMongoClient: true })
  
 })

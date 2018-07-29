@@ -3,7 +3,7 @@
 const mongoose = require('mongoose'),
     restifyMongoose = require('restify-mongoose'),
     mongooseApiQuery = require('mongoose-api-query'),
-    createdModified = require('mongoose-createdmodified').createdModifiedPlugin
+    createdModified = require('mongoose-createdmodified').createdModifiedPlugin;
  
 const todoSchema = new mongoose.Schema({
   name: { type: String, required: true },
