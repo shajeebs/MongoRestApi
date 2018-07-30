@@ -16,7 +16,7 @@ CustomerContactSchema.plugin(createdModified, { index: true })
  
 var CustomerContactModel = mongoose.model('CustomerContact', CustomerContactSchema);
 var CustomerContact = restifyMongoose(CustomerContactModel);
-server.post('CustomerContact', CustomerContact.insert());
+server.post('/CustomerContact', CustomerContact.insert());
 server.put('/CustomerContact/:id', CustomerContact.update());
 server.del('/CustomerContact/:id', CustomerContact.remove());
 server.get('/CustomerContact', CustomerContact.query());

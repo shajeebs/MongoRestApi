@@ -17,7 +17,7 @@ UserSchema.plugin(createdModified, { index: true })
  
 var UserModel = mongoose.model('User', UserSchema);
 var User = restifyMongoose(UserModel);
-server.post('User', User.insert());
+server.post('/User', User.insert());
 server.put('/User/:id', User.update());
 server.del('/User/:id', User.remove());
 server.get('/User', User.query());

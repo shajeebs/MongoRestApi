@@ -27,7 +27,7 @@ SalesReceiptSchema.plugin(createdModified, { index: true })
  
 var SalesReceiptModel = mongoose.model('SalesReceipt', SalesReceiptSchema);
 var SalesReceipt = restifyMongoose(SalesReceiptModel);
-server.post('SalesReceipt', SalesReceipt.insert());
+server.post('/SalesReceipt', SalesReceipt.insert());
 server.put('/SalesReceipt/:id', SalesReceipt.update());
 server.del('/SalesReceipt/:id', SalesReceipt.remove());
 server.get('/SalesReceipt', SalesReceipt.query());

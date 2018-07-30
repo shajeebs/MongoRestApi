@@ -37,7 +37,7 @@ CustomerSchema.plugin(createdModified, { index: true })
  
 var CustomerModel = mongoose.model('Customer', CustomerSchema);
 var Customer = restifyMongoose(CustomerModel);
-server.post('Customer', Customer.insert());
+server.post('/Customer', Customer.insert());
 server.put('/Customer/:id', Customer.update());
 server.del('/Customer/:id', Customer.remove());
 server.get('/Customer', Customer.query());

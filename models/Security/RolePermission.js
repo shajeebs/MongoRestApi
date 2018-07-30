@@ -16,7 +16,7 @@ RolePermissionSchema.plugin(createdModified, { index: true })
  
 var RolePermissionModel = mongoose.model('RolePermission', RolePermissionSchema);
 var RolePermission = restifyMongoose(RolePermissionModel);
-server.post('RolePermission', RolePermission.insert());
+server.post('/RolePermission', RolePermission.insert());
 server.put('/RolePermission/:id', RolePermission.update());
 server.del('/RolePermission/:id', RolePermission.remove());
 server.get('/RolePermission', RolePermission.query());

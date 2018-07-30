@@ -21,7 +21,7 @@ CustomerAllocationSchema.plugin(createdModified, { index: true })
  
 var CustomerAllocationModel = mongoose.model('CustomerAllocation', CustomerAllocationSchema);
 var CustomerAllocation = restifyMongoose(CustomerAllocationModel);
-server.post('CustomerAllocation', CustomerAllocation.insert());
+server.post('/CustomerAllocation', CustomerAllocation.insert());
 server.put('/CustomerAllocation/:id', CustomerAllocation.update());
 server.del('/CustomerAllocation/:id', CustomerAllocation.remove());
 server.get('/CustomerAllocation', CustomerAllocation.query());

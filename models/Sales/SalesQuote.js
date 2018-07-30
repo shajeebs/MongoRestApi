@@ -20,7 +20,7 @@ SalesQuoteSchema.plugin(createdModified, { index: true })
  
 var SalesQuoteModel = mongoose.model('SalesQuote', SalesQuoteSchema);
 var SalesQuote = restifyMongoose(SalesQuoteModel);
-server.post('SalesQuote', SalesQuote.insert());
+server.post('/SalesQuote', SalesQuote.insert());
 server.put('/SalesQuote/:id', SalesQuote.update());
 server.del('/SalesQuote/:id', SalesQuote.remove());
 server.get('/SalesQuote', SalesQuote.query());

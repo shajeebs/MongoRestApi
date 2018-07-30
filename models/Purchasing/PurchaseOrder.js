@@ -21,7 +21,7 @@ PurchaseOrderSchema.plugin(createdModified, { index: true })
  
 var PurchaseOrderModel = mongoose.model('PurchaseOrder', PurchaseOrderSchema);
 var PurchaseOrder = restifyMongoose(PurchaseOrderModel);
-server.post('PurchaseOrder', PurchaseOrder.insert());
+server.post('/PurchaseOrder', PurchaseOrder.insert());
 server.put('/PurchaseOrder/:id', PurchaseOrder.update());
 server.del('/PurchaseOrder/:id', PurchaseOrder.remove());
 server.get('/PurchaseOrder', PurchaseOrder.query());

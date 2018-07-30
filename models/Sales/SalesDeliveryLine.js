@@ -23,7 +23,7 @@ SalesDeliveryLineSchema.plugin(createdModified, { index: true })
  
 var SalesDeliveryLineModel = mongoose.model('SalesDeliveryLine', SalesDeliveryLineSchema);
 var SalesDeliveryLine = restifyMongoose(SalesDeliveryLineModel);
-server.post('SalesDeliveryLine', SalesDeliveryLine.insert());
+server.post('/SalesDeliveryLine', SalesDeliveryLine.insert());
 server.put('/SalesDeliveryLine/:id', SalesDeliveryLine.update());
 server.del('/SalesDeliveryLine/:id', SalesDeliveryLine.remove());
 server.get('/SalesDeliveryLine', SalesDeliveryLine.query());

@@ -26,7 +26,7 @@ SalesInvoiceLineSchema.plugin(createdModified, { index: true })
  
 var SalesInvoiceLineModel = mongoose.model('SalesInvoiceLine', SalesInvoiceLineSchema);
 var SalesInvoiceLine = restifyMongoose(SalesInvoiceLineModel);
-server.post('SalesInvoiceLine', SalesInvoiceLine.insert());
+server.post('/SalesInvoiceLine', SalesInvoiceLine.insert());
 server.put('/SalesInvoiceLine/:id', SalesInvoiceLine.update());
 server.del('/SalesInvoiceLine/:id', SalesInvoiceLine.remove());
 server.get('/SalesInvoiceLine', SalesInvoiceLine.query());

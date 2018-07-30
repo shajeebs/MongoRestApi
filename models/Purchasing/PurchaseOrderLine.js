@@ -23,7 +23,7 @@ PurchaseOrderLineSchema.plugin(createdModified, { index: true })
  
 var PurchaseOrderLineModel = mongoose.model('PurchaseOrderLine', PurchaseOrderLineSchema);
 var PurchaseOrderLine = restifyMongoose(PurchaseOrderLineModel);
-server.post('PurchaseOrderLine', PurchaseOrderLine.insert());
+server.post('/PurchaseOrderLine', PurchaseOrderLine.insert());
 server.put('/PurchaseOrderLine/:id', PurchaseOrderLine.update());
 server.del('/PurchaseOrderLine/:id', PurchaseOrderLine.remove());
 server.get('/PurchaseOrderLine', PurchaseOrderLine.query());

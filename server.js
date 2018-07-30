@@ -13,7 +13,7 @@ const config        = require('./config'),
 /**
 * Logging
 */
-global.log = new winston.Logger({
+global.log = winston.createLogger({
     transports: [
         new winston.transports.Console({
             level: 'info',
@@ -37,10 +37,10 @@ global.server = restify.createServer({
 /**
 * Middleware
 */
-server.use(restify.jsonBodyParser({ mapParams: true }))
-server.use(restify.acceptParser(server.acceptable))
-server.use(restify.queryParser({ mapParams: true }))
-server.use(restify.fullResponse())
+server.use(restify.plugins.jsonBodyParser({ mapParams: true }))
+server.use(restify.plugins.acceptParser(server.acceptable))
+server.use(restify.plugins.queryParser({ mapParams: true }))
+server.use(restify.plugins.fullResponse())
  
 /**
 * Error Handling
@@ -79,6 +79,6 @@ server.listen(config.port, function() {
  
     })
     mongoose.Promise = global.Promise;
-    global.db = mongoose.connect(config.db.uri, { useMongoClient: true })
+    global.db = mongoose.connect(config.db.uri, { useNewUrlParser: true })
  
 })

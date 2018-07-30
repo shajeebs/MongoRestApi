@@ -21,7 +21,7 @@ SalesQuoteLineSchema.plugin(createdModified, { index: true })
  
 var SalesQuoteLineModel = mongoose.model('SalesQuoteLine', SalesQuoteLineSchema);
 var SalesQuoteLine = restifyMongoose(SalesQuoteLineModel);
-server.post('SalesQuoteLine', SalesQuoteLine.insert());
+server.post('/SalesQuoteLine', SalesQuoteLine.insert());
 server.put('/SalesQuoteLine/:id', SalesQuoteLine.update());
 server.del('/SalesQuoteLine/:id', SalesQuoteLine.remove());
 server.get('/SalesQuoteLine', SalesQuoteLine.query());

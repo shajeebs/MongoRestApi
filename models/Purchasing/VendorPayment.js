@@ -20,7 +20,7 @@ VendorPaymentSchema.plugin(createdModified, { index: true })
  
 var VendorPaymentModel = mongoose.model('VendorPayment', VendorPaymentSchema);
 var VendorPayment = restifyMongoose(VendorPaymentModel);
-server.post('VendorPayment', VendorPayment.insert());
+server.post('/VendorPayment', VendorPayment.insert());
 server.put('/VendorPayment/:id', VendorPayment.update());
 server.del('/VendorPayment/:id', VendorPayment.remove());
 server.get('/VendorPayment', VendorPayment.query());

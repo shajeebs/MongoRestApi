@@ -33,7 +33,7 @@ VendorSchema.plugin(createdModified, { index: true })
  
 var VendorModel = mongoose.model('Vendor', VendorSchema);
 var Vendor = restifyMongoose(VendorModel);
-server.post('Vendor', Vendor.insert());
+server.post('/Vendor', Vendor.insert());
 server.put('/Vendor/:id', Vendor.update());
 server.del('/Vendor/:id', Vendor.remove());
 server.get('/Vendor', Vendor.query());

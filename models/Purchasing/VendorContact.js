@@ -16,7 +16,7 @@ VendorContactSchema.plugin(createdModified, { index: true })
  
 var VendorContactModel = mongoose.model('VendorContact', VendorContactSchema);
 var VendorContact = restifyMongoose(VendorContactModel);
-server.post('VendorContact', VendorContact.insert());
+server.post('/VendorContact', VendorContact.insert());
 server.put('/VendorContact/:id', VendorContact.update());
 server.del('/VendorContact/:id', VendorContact.remove());
 server.get('/VendorContact', VendorContact.query());

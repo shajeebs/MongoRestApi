@@ -27,7 +27,7 @@ PurchaseInvoiceSchema.plugin(createdModified, { index: true })
  
 var PurchaseInvoiceModel = mongoose.model('PurchaseInvoice', PurchaseInvoiceSchema);
 var PurchaseInvoice = restifyMongoose(PurchaseInvoiceModel);
-server.post('PurchaseInvoice', PurchaseInvoice.insert());
+server.post('/PurchaseInvoice', PurchaseInvoice.insert());
 server.put('/PurchaseInvoice/:id', PurchaseInvoice.update());
 server.del('/PurchaseInvoice/:id', PurchaseInvoice.remove());
 server.get('/PurchaseInvoice', PurchaseInvoice.query());

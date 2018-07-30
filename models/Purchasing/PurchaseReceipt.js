@@ -18,7 +18,7 @@ PurchaseReceiptSchema.plugin(createdModified, { index: true })
  
 var PurchaseReceiptModel = mongoose.model('PurchaseReceipt', PurchaseReceiptSchema);
 var PurchaseReceipt = restifyMongoose(PurchaseReceiptModel);
-server.post('PurchaseReceipt', PurchaseReceipt.insert());
+server.post('/PurchaseReceipt', PurchaseReceipt.insert());
 server.put('/PurchaseReceipt/:id', PurchaseReceipt.update());
 server.del('/PurchaseReceipt/:id', PurchaseReceipt.remove());
 server.get('/PurchaseReceipt', PurchaseReceipt.query());

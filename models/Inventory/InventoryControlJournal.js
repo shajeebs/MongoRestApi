@@ -23,7 +23,7 @@ InventoryControlJournalSchema.plugin(createdModified, { index: true })
  
 var InventoryControlJournalModel = mongoose.model('InventoryControlJournal', InventoryControlJournalSchema);
 var InventoryControlJournal = restifyMongoose(InventoryControlJournalModel);
-server.post('InventoryControlJournal', InventoryControlJournal.insert());
+server.post('/InventoryControlJournal', InventoryControlJournal.insert());
 server.put('/InventoryControlJournal/:id', InventoryControlJournal.update());
 server.del('/InventoryControlJournal/:id', InventoryControlJournal.remove());
 server.get('/InventoryControlJournal', InventoryControlJournal.query());

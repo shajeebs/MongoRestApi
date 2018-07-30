@@ -21,7 +21,7 @@ SalesOrderSchema.plugin(createdModified, { index: true })
  
 var SalesOrderModel = mongoose.model('SalesOrder', SalesOrderSchema);
 var SalesOrder = restifyMongoose(SalesOrderModel);
-server.post('SalesOrder', SalesOrder.insert());
+server.post('/SalesOrder', SalesOrder.insert());
 server.put('/SalesOrder/:id', SalesOrder.update());
 server.del('/SalesOrder/:id', SalesOrder.remove());
 server.get('/SalesOrder', SalesOrder.query());

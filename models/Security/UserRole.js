@@ -16,7 +16,7 @@ UserRoleSchema.plugin(createdModified, { index: true })
  
 var UserRoleModel = mongoose.model('UserRole', UserRoleSchema);
 var UserRole = restifyMongoose(UserRoleModel);
-server.post('UserRole', UserRole.insert());
+server.post('/UserRole', UserRole.insert());
 server.put('/UserRole/:id', UserRole.update());
 server.del('/UserRole/:id', UserRole.remove());
 server.get('/UserRole', UserRole.query());

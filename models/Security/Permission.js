@@ -17,7 +17,7 @@ PermissionSchema.plugin(createdModified, { index: true })
  
 var PermissionModel = mongoose.model('Permission', PermissionSchema);
 var Permission = restifyMongoose(PermissionModel);
-server.post('Permission', Permission.insert());
+server.post('/Permission', Permission.insert());
 server.put('/Permission/:id', Permission.update());
 server.del('/Permission/:id', Permission.remove());
 server.get('/Permission', Permission.query());
