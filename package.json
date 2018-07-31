@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "bunyan-winston-adapter": "^0.2.0",
-    "lodash": "^4.17.4",
-    "mongoose": "^5.2.5",
+    "lodash": "^4.17.10",
+    "mongoose": "^5.2.6",
     "mongoose-api-query": "^0.1.1-pre",
     "mongoose-createdmodified": "0.0.2",
     "restify": "^7.2.1",
