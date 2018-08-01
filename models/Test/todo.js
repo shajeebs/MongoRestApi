@@ -10,9 +10,9 @@ const todoSchema = new mongoose.Schema({
   comment: { type: String }
 })
  
-todoSchema.plugin(mongooseApiQuery)
-todoSchema.plugin(createdModified, { index: true })
-var todoModel = mongoose.model('todo', todoSchema)
+todoSchema.plugin(createdModified, { index: true });
+todoSchema.plugin(mongooseApiQuery);
+var todoModel = mongoose.model('todo', todoSchema);
 var todo = restifyMongoose(todoModel);
 server.get('/todo', todo.query());
 server.get('/todo/:id', todo.detail());
