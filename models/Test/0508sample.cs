@@ -413,7 +413,7 @@ namespace AlMuhasiba.Dto.Security
         {
             bool isSysAdmin = false;
  
-            if (this.Roles.Count > 0)
+            if (this.Roles.Count() > 0)
             {
                 foreach (var role in Roles)
                     if (role.Role.Name == "Administrator")
