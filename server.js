@@ -1,5 +1,6 @@
 var restify = require('restify');
 var restifyMongoose = require('restify-mongoose');
+const corsMiddleware = require('restify-cors-middleware')
 var mongoose = require('mongoose');
 const config = require('./config'),
     bunyanWinston = require('bunyan-winston-adapter'),
@@ -39,6 +40,13 @@ server.use(restify.plugins.queryParser({ mapParams: true }))
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.jsonBodyParser({ mapParams: true})) // For using x-www-form-urlencoded
 server.use(restify.plugins.authorizationParser());
+const cors = corsMiddleware({
+  preflightMaxAge: 5, //Optional
+  origins: ['*']
+})
+server.pre(cors.preflight)
+server.use(cors.actual)
+
 
 /**
 * Error Handling
@@ -48,16 +56,8 @@ server.on('uncaughtException', (req, res, route, err) => {
     res.send(err)
 });
 
-server.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*'); // * => allow all origins
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,OPTIONS,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, X-Auth-Token, Accept'); // add remove headers according to your needs
-    next()
-});
-
 server.listen(config.port, function () {
-    //mongoose.connect('mongodb://localhost:27017/meandev')
-    mongoose.connect('mongodb://merndbusr2:Password1!@ds249311.mlab.com:49311/merndb')
+    mongoose.connect(config.db.uri);
     
     mongoose.connection.on('open', function(err) {
         if (err) {
