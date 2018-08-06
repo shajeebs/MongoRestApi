@@ -56,7 +56,9 @@ server.use(function (req, res, next) {
 });
 
 server.listen(config.port, function () {
+    //mongoose.connect('mongodb://localhost:27017/meandev')
     mongoose.connect('mongodb://merndbusr2:Password1!@ds249311.mlab.com:49311/merndb')
+    
     mongoose.connection.on('open', function(err) {
         if (err) {
             log.error('Mongoose default connection error: ' + err)
